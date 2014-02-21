@@ -15,17 +15,11 @@
 	body {
       line-height: 1.5;
       height:100%;
-			background: #f1f1f2; /* Old browsers */
-background: -moz-linear-gradient(top,  #f1f1f2 0%, #ffffff 52%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f1f1f2), color-stop(52%,#ffffff)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  #f1f1f2 0%,#ffffff 52%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  #f1f1f2 0%,#ffffff 52%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  #f1f1f2 0%,#ffffff 52%); /* IE10+ */
-background: linear-gradient(to bottom,  #f1f1f2 0%,#ffffff 52%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1f1f2', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
-
+      background: url(images/3vot-bg-body.jpg);
+      background-repeat: repeat-x;
+      background-attachment:fixed;
 			color: #4d4d4d;
-			padding: 50px 0;
+			padding: 40px 0;
       font-family: 'Open Sans', sans-serif;
 		}
 
@@ -92,6 +86,22 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1f1f2', end
 		a:hover {
 			text-decoration: none;
 		}
+
+    .appstore-search-affix {
+      width: 60%;
+      z-index: 1;
+      padding: 0px 0px 3px 15px;
+      box-shadow: 0 5px 2px rgba(245,245,245,.2);
+      background: #f3f3f3; /* Old browsers */
+background: -moz-linear-gradient(top, #f3f3f3 0%, #f5f5f5 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f3f3f3), color-stop(100%,#f5f5f5)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #f3f3f3 0%,#f5f5f5 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #f3f3f3 0%,#f5f5f5 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #f3f3f3 0%,#f5f5f5 100%); /* IE10+ */
+background: linear-gradient(to bottom, #f3f3f3 0%,#f5f5f5 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3f3f3', endColorstr='#f5f5f5',GradientType=0 ); /* IE6-9 */
+
+    }
 
     .appstore {
       padding: 10px 20px 30px;
@@ -176,12 +186,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1f1f2', end
 		<div class="row">
   	  <div class="navbar navbar-default navbar-fixed-top " role="navigation">
   	  	<div class="container">
-  	  		<div class="col-md-12">
-            <div class="col-md-3">
+  	  		<div class="col-md-12 col-sm-12">
+            <div class="col-md-3 col-sm-3">
   	  		   <a class="navbar-brand" href="#"><img style="height:90%; position:relative;top:-12px;" src="images/3vot-logo-white.svg" alt=""></a>
               <a href="#" class="navbar-link pull-left" style="position:relative; top:2px; font-size:12px; color: #fff">Marketplace <img style="margin:0 10px;top: -1px; position: relative;" src="images/3vot-icon-marketplace.svg" alt=""></a>
             </div>
-  	  		  <div class="input-group col-md-9">
+  	  		  <div class="input-group col-md-9 col-sm-9">
   	  		  	<input type="text" class="form-control " placeholder="Search for Organizations and Enterprises" value="">
   	  		  	<span class="input-group-addon text-muted glyphicon glyphicon-search" style="display: inline-block;top: 4px;margin-left:-40px;"></span>
   	  		  </div>
@@ -192,19 +202,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1f1f2', end
 
 
    	  <div class="row">
-   	    <div class="col-md-12">
+   	    <div class="col-md-12 col-sm-12">
    	      
-   	      <div class="col-md-3 profile-sidebar-3vot" >
-   	        <div class="profile-info-3vot">
+   	      <div class="col-md-3 col-sm-3 profile-sidebar-3vot"  >
+   	        <div class="profile-info-3vot" >
               <div class="row">
-                <div class="col-md-10 col-md-offset-1">
+                <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
                   <h2 class="" style="">RODCO S.A.</h2> <!-- <%= @profile.attributes.name %> -->
                   <br>
                 </div>
               </div>
 
               <div class="row">
-                <div class="col-md-10 col-md-offset-1">
+                <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
                   <div class="text-center pull-left" style="margin: 0 5%">
                     <img class="" src="images/3vot-icon-store.svg" alt="Store Icon">
                     <br>
@@ -219,7 +229,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1f1f2', end
               </div>
 
               <div class="row">
-                <div class="col-md-10 col-md-offset-1">
+                <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
                   <p class="text-muted">
                     <br>                
                     Write a small introduction  for your profle &nbsp;  <span class="glyphicon glyphicon-pencil"></span>
@@ -229,11 +239,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1f1f2', end
               </div>
 
               <div class="row">
-                <div class="col-md-10 col-md-offset-1" style="border-bottom:1px solid #e6e6e6"><span></span></div>
+                <div class="col-md-10 col-md-offset-1 col-sm-offset-1" style="border-bottom:1px solid #e6e6e6"><span></span></div>
               </div>
 
               <div class="row">
-                <div class="col-md-12 text-center">
+                <div class="col-md-12 text-center col-sm-10">
                   <br>
                   <img src="images/3vot-icon-store.svg" style="display: inline-block;" alt="Store Icon">
                   <h4 style="color:#ffb83b;display: inline-block;">Stores</h4>
@@ -242,7 +252,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1f1f2', end
               </div>
 
               <div class="row">
-                <div class="col-md-10 col-md-offset-1">
+                <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
                   <a href="" class="btn btn-default btn-block btn-lg">Public Apps</a>
                   <a href="" class="btn btn-default btn-block btn-lg">Mercadeo Rodco</a>
                 </div>
@@ -251,8 +261,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1f1f2', end
    	        </div>
    	      </div>
           
-   	      <div class="col-md-9" >
-              <div class="appstore-search-affix" data-spy="affix" data-offset-top="60"><!-- Affix -->
+   	      <div class="col-md-9 col-sm-9" >
+              <div class="appstore-search" data-spy="affix" data-offset-top="0"><!-- Affix -->
    	          <div class="" style="margin-top:15px;" >
                 <div class="row">
                   <div class="" >
@@ -269,20 +279,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1f1f2', end
    	          </div> 
               </div>
 
-   	        <section style="padding-top:20px;">
+   	        <section style="padding-top:70px;padding-bottom:200px">
    	      
    	        	<div class="row">
-   	        	  <div class="col-md-12">
+   	        	  <div class="col-md-12 col-sm-12">
 
                   <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12 col-sm-12">
                       <h5 style="font-weight:600;"><img src="images/3vot-icon-store.svg" style="height:30px; margin:0 10px" alt="">Public Apps</h5>
                     </div>
                   </div>
 
                   <div class="appstore">
                      <div class="row">
-                      <div class="col-md-12">
+                      <div class="col-md-12 col-sm-12">
 
                         <div class="appstore-app-container">
                           <a href="" class="appstore-app public text-center" >
@@ -302,14 +312,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1f1f2', end
                   </div>
 
                   <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12 col-sm-12">
                       <h5 style="font-weight:600;"><img src="images/3vot-icon-store.svg" style="height:30px; margin:0 10px" alt="">Mercadeo Rodco</h5>
                     </div>
                   </div>
 
                   <div class="appstore">
                      <div class="row">
-                      <div class="col-md-12">
+                      <div class="col-md-12 col-sm-12">
 
                         <div class="appstore-app-container">
                           <a href="" class="appstore-app private text-center" >
@@ -349,7 +359,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1f1f2', end
 
     $( document ).ready(function() {
  
-      alert("yes");
+      $('.appstore-search').on('affix.bs.affix', function (e) {
+        $('.appstore-search').addClass('appstore-search-affix');
+      })
+
+      $('.appstore-search').on('affixed-top.bs.affix', function (e) {
+        $('.appstore-search').removeClass('appstore-search-affix');
+      })
  
     });
 
