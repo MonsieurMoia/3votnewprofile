@@ -8,9 +8,23 @@
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 	<style>
 
-		body {
-			background-color: #f5f5f6;
-			color: #8a8c8e;
+  html {
+    background-color: #fff;
+  }
+
+	body {
+      line-height: 1.5;
+      height:100%;
+			background: #f1f1f2; /* Old browsers */
+background: -moz-linear-gradient(top,  #f1f1f2 0%, #ffffff 52%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f1f1f2), color-stop(52%,#ffffff)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #f1f1f2 0%,#ffffff 52%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #f1f1f2 0%,#ffffff 52%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #f1f1f2 0%,#ffffff 52%); /* IE10+ */
+background: linear-gradient(to bottom,  #f1f1f2 0%,#ffffff 52%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1f1f2', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+			color: #4d4d4d;
 			padding: 50px 0;
       font-family: 'Open Sans', sans-serif;
 		}
@@ -21,13 +35,16 @@
 		}
 
 		.form-control {
-			border-radius: 0;
+			border-radius: 3px!important;
 			border: none;
+      color: #4d4d4d;
+      -webkit-box-shadow: inset 0 2px #e6e6e6;
+      -moz-box-shadow: inset 0 2px #e6e6e6;
+      box-shadow: inset 0 2px #e6e6e6;
 		}
 
 		.input-group-addon {
-			position:relative;
-			left:-40px;
+			position:relative; 
 			background-color: transparent;
 			border: none;
 			color:#b3b3b3;
@@ -36,7 +53,12 @@
 		.btn {
 			border-radius: 0;
 			border: none;
-			color: #8a8c8e;
+			color: #4d4d4d;
+      -webkit-transition: all .3s;
+      -moz-transition: all .3s;
+      -ms-transition: all .3s;
+      -o-transition: all .3s;
+      transition: all .3s;
 		}
 
 		.btn-default {
@@ -45,8 +67,24 @@
 			box-shadow: 0 2px 0 #e6e6e6;
 		}
 
+    .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
+      color: #4d4d4d; 
+      background-color: #fff;
+      -webkit-box-shadow: 0 2px 2px rgba(0,0,0,.2);
+      -moz-box-shadow: 0 2px 2px rgba(0,0,0,.2);
+      box-shadow: 0 2px 2px rgba(0,0,0,.2);
+    }
+
+    .btn-lg {
+      font-size:14px;
+    }
+
 		.navbar-default {
-			background-color: #e6e6e6;
+      background-image: url(images/3vot-bg-navbar.jpg);
+      background-repeat: repeat-x;
+      -webkit-background-size: 800px 42px;
+      background-size: 800px 42px;
+      border-bottom: 2px solid #cccccc;
 		}
 
 		a {
@@ -55,14 +93,71 @@
 			text-decoration: none;
 		}
 
+    .appstore {
+      padding: 10px 20px 30px;
+    }
+
+    .appstore-app-container {
+      width: 210px;
+      display: inline-block;
+      margin:10px;
+    }
+
 		.appstore-app {
-				margin: 20px 10px;
-				background-color: #fff;
-				padding: 10px;
-				width: 30%;
-				display: inline-block;
-				box-shadow: 0 1px 2px rgba(0,0,0,.2);
-			}
+			color: #fff;
+			padding: 20px;
+			width: 100%;
+      height: 210px;
+			display: inline-block;
+			box-shadow: 0 1px 2px rgba(0,0,0,.2);
+      overflow: hidden;
+      position: relative;
+		}
+    .appstore-app-icon {
+      width:35%;
+      margin-top: 25px;
+    }
+    .appstore-app-description {
+      font-size:12px;
+      margin-top: 100px;
+      opacity: 0
+    }
+    .appstore-app-icon,
+    .appstore-app-name,
+    .appstore-app-description,
+    .appstore-app-date{
+      -webkit-transition: all .5s ease-in-out ;
+      -moz-transition: all .5s ease-in-out ;
+      -ms-transition: all .5s ease-in-out ;
+      -o-transition: all .5s ease-in-out ;
+      transition: all .5s ease-in-out ;
+    }
+    .appstore-app-icon {
+      opacity: 1;
+      transition-delay: .1s;
+      -webkit-transition-delay: .1s; /* Safari */
+    }
+    .appstore-app:hover {
+      color:#fff;
+    }
+
+    .appstore-app:hover .appstore-app-icon,
+    .appstore-app:hover .appstore-app-date {
+      margin-top:-150px;
+      opacity: 0
+    }
+
+    .appstore-app:hover .appstore-app-description{
+      margin-top: 0;
+      opacity: 1
+    }
+
+    .public {
+      background-color: #46c5e8;
+    }
+    .private {
+      background-color: #ed705f;
+    }
 
 		ul {
 			padding-left: 10px;
@@ -81,12 +176,15 @@
 		<div class="row">
   	  <div class="navbar navbar-default navbar-fixed-top " role="navigation">
   	  	<div class="container">
-  	  		<div class="col-md-5	">
-  	  		  <a class="navbar-brand" href="#"><img style="height:90%; position:relative;top:-11px;" src="images/3vot-logo-darkgray.svg" alt=""></a>
-  	  		  	<div class="input-group ">
-  	  		  		<input type="text" class="form-control " placeholder="Buscar Empresa" value="">
-  	  		  		<span class=" input-group-addon text-muted glyphicon glyphicon-search"></span>
-  	  		  	</div>
+  	  		<div class="col-md-12">
+            <div class="col-md-3">
+  	  		   <a class="navbar-brand" href="#"><img style="height:90%; position:relative;top:-12px;" src="images/3vot-logo-white.svg" alt=""></a>
+              <a href="#" class="navbar-link pull-left" style="position:relative; top:2px; font-size:12px; color: #fff">Marketplace <img style="margin:0 10px;top: -1px; position: relative;" src="images/3vot-icon-marketplace.svg" alt=""></a>
+            </div>
+  	  		  <div class="input-group col-md-9">
+  	  		  	<input type="text" class="form-control " placeholder="Search for Organizations and Enterprises" value="">
+  	  		  	<span class="input-group-addon text-muted glyphicon glyphicon-search" style="display: inline-block;top: 4px;margin-left:-40px;"></span>
+  	  		  </div>
 					</div>
   	  	</div>
   	  </div>
@@ -97,60 +195,142 @@
    	    <div class="col-md-12">
    	      
    	      <div class="col-md-3 profile-sidebar-3vot" >
-   	        <div class="profile-info-3vot" data-spy="affix" data-offset-top="225">
-   	          <h2 class="" style="color:#1cb5ea">RODCO S.A.</h2> <!-- <%= @profile.attributes.name %> -->
-   	          <small class="text-muted">2 Tiendas - 34 Apps</small>
-   	          <p>Descripción</p>
-   	          <div style="border-bottom:1px solid #e6e6e6"><span></span></div>
-   	          <h3 style="color:#b3b3b3">Tiendas</h3>
+   	        <div class="profile-info-3vot">
+              <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                  <h2 class="" style="">RODCO S.A.</h2> <!-- <%= @profile.attributes.name %> -->
+                  <br>
+                </div>
+              </div>
 
-   	          <a href="" class="btn btn-default btn-block">Apps Públicas</a>
-   	          <a href="" class="btn btn-default btn-block">Mercadeo Rodco</a>
+              <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                  <div class="text-center pull-left" style="margin: 0 5%">
+                    <img class="" src="images/3vot-icon-store.svg" alt="Store Icon">
+                    <br>
+                    <span style="color:#ffb83b; font-size:12px">2 Stores</span>
+                  </div>
+                  <div class=" text-center pull-left" style="margin: 0 5%">
+                    <img class="" src="images/3vot-icon-app.svg" alt="App Icon">
+                    <br>
+                    <span style="color:#1cb5ea; font-size:12px">2 Apps</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                  <p class="text-muted">
+                    <br>                
+                    Write a small introduction  for your profle &nbsp;  <span class="glyphicon glyphicon-pencil"></span>
+                    <br><br>
+                  </p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-10 col-md-offset-1" style="border-bottom:1px solid #e6e6e6"><span></span></div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 text-center">
+                  <br>
+                  <img src="images/3vot-icon-store.svg" style="display: inline-block;" alt="Store Icon">
+                  <h4 style="color:#ffb83b;display: inline-block;">Stores</h4>
+                  <br><br>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                  <a href="" class="btn btn-default btn-block btn-lg">Public Apps</a>
+                  <a href="" class="btn btn-default btn-block btn-lg">Mercadeo Rodco</a>
+                </div>
+              </div>
 
    	        </div>
    	      </div>
+          
+   	      <div class="col-md-9" >
+              <div class="appstore-search-affix" data-spy="affix" data-offset-top="60"><!-- Affix -->
+   	          <div class="" style="margin-top:15px;" >
+                <div class="row">
+                  <div class="" >
+  	 						    <h4 style="margin-top:8px; color:#1cb5ea;" class="pull-left">
+                      <span class="glyphicon glyphicon-search pull-left" style="margin: 0 10px;"></span>
+                      Search for Apps &nbsp;
+                    </h4>
+                  </div>
+  	 						  <div class="input-group">
+  	 						  	<input type="text" class="form-control " placeholder="Write an app’s name or category" value="">
+  	 						    <span class="input-group-addon glyphicon glyphicon-search" style="position:relative; left:-40px; top: 1px;"></span>
+   	              </div>
+                </div>
+   	          </div> 
+              </div>
 
-   	      <div class="col-md-9">
-   	        <div class="row">
-   	          <div class="" style="background-color:#1cb5ea; padding: 5px 0; margin-top:15px;" data-spy="affix" data-offset-top="225">
-
-  	 							  	<h4 style="width:20%; color:#fff;margin-top:8px;" class="pull-left text-center">Apps</h4>
-  	 							  	<div class="input-group">
-  	 							  		<input type="text" class="form-control " placeholder="Buscar Apps y Tiendas de ésta empresa" value="">
-  	 							  		<span class=" input-group-addon text-muted glyphicon glyphicon-search"></span>
-   	             			  <button class="dropdown btn btn-link pull-right" >
-   	             			    <a href="#" class="dropdown-toggle text-muted" style="color:#fff" data-toggle="dropdown">Tiendas <b class="caret"></b></a>
-   	             			    <ul class="dropdown-menu dropdown-menu-right">
-   	             			      <li><a href="#">Public Apps</a></li>
-   	             			      <li><a href="#">Employee Apps</a></li>
-   	             			      <li><a href="#">Summer Apps</a></li>
-   	             			    </ul>
-   	             			  </button>
-   	             			</div>
-
-   	          </div>             
-   	        </div> <!-- Row -->
-
-   	        <section style="padding:10px 0">
+   	        <section style="padding-top:20px;">
    	      
    	        	<div class="row">
    	        	  <div class="col-md-12">
-   	        	    <h3 style="color:#b3b3b3">Apps Públicas</h3>
-   	        	    <div class="row">
-   	        	        <a href="btn" class="appstore-app">
-   	        	          <h4 style="color:#4d4d4d">testApp</h4>
-   	        	          <p style="color:#8a8c8e">3vot Tutorial is a free demo app to start building your first apps using 3vot technology. Easy & 5x times faster.</p>
-   	        	        </a>
-   	        	    </div>
-   	        	    <h3 style="color:#b3b3b3">Mercadeo Rodco</h3>
-   	        	      <div class="row">
-   	        	        <a href="btn" class="appstore-app">
-   	        	          <h4 style="color:#4d4d4d">Contacts</h4>
-   	        	          <p style="color:#8a8c8e">3vot Tutorial is a free demo app to start building your first apps using 3vot technology. Easy & 5x times faster.</p>
-   	        	        </a>
-   	        	      </div>
+
+                  <div class="row">
+                    <div class="col-md-12">
+                      <h5 style="font-weight:600;"><img src="images/3vot-icon-store.svg" style="height:30px; margin:0 10px" alt="">Public Apps</h5>
+                    </div>
+                  </div>
+
+                  <div class="appstore">
+                     <div class="row">
+                      <div class="col-md-12">
+
+                        <div class="appstore-app-container">
+                          <a href="" class="appstore-app public text-center" >
+                            <img class="appstore-app-icon" src="images/3vot-icon-app.svg" alt="">
+                            <h4 class="appstore-app-name">Contacts</h4>
+                            <p class="appstore-app-description">A simple app with the SpineJS framework that loads JSON from a Google Spreadsheet, it showcases how to build a multiplatform App.</p>
+                            <h6 class="appstore-app-date" style="position:absolute; font-size:12px; bottom:0; right:10px">
+                              <span class="glyphicon glyphicon-time"></span>
+                              12/2/14
+                            </h6>
+                          </a>
+                          <h6 class="text-muted text-center" style="margin:0px; color:#cccccc">RODCO S.A.</h6>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-12">
+                      <h5 style="font-weight:600;"><img src="images/3vot-icon-store.svg" style="height:30px; margin:0 10px" alt="">Mercadeo Rodco</h5>
+                    </div>
+                  </div>
+
+                  <div class="appstore">
+                     <div class="row">
+                      <div class="col-md-12">
+
+                        <div class="appstore-app-container">
+                          <a href="" class="appstore-app private text-center" >
+                            <img class="appstore-app-icon" src="images/3vot-icon-app-red.svg" alt="">
+                            <h4 class="appstore-app-name">Contacts</h4>
+                            <p class="appstore-app-description">A simple app with the SpineJS framework that loads JSON from a Google Spreadsheet, it showcases how to build a multiplatform App.</p>
+                            <h6 class="appstore-app-date" style="position:absolute; font-size:12px; bottom:0; right:10px">
+                              <span class="glyphicon glyphicon-time"></span>
+                              12/2/14
+                            </h6>
+                          </a>
+                          <h6 class="text-muted text-center" style="margin:0px; color:#cccccc">RODCO S.A.</h6>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+  
    	        	  </div>
    	        	</div>
+
    	        </section>
    	      </div>
 
@@ -163,8 +343,17 @@
 
 
 	
-	
+
 	<script src="https://code.jquery.com/jquery.js"></script>
+  <script>
+
+    $( document ).ready(function() {
+ 
+      alert("yes");
+ 
+    });
+
+  </script>
 	<script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 	<script>
 
